@@ -1,0 +1,108 @@
+body {
+    background: greenyellow;
+}
+
+.tab {
+    border: 4px double black;
+    color: green;
+    font-size: 12pt;
+    background: yellow;
+}
+
+img {
+    float: left;
+    width: 30%;
+    margin: 7px 7px 7px 7px;
+}
+.mainmenu{
+    background: #82FFFF;
+    border:1px solid #000;
+    width: 100%;
+    height: 50px;
+}
+
+.menuitem{
+    background: #82FFFF;
+    font-size: 12pt;
+    height: 100%;
+    line-height:100%;
+    width: 18%;
+    float: left;
+    color: #868686;
+    display: block;
+    cursor: default;  /* устанавливаем курсор в виде стрелки */
+    vertical-align: middle;
+    text-align: center;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-style: italic;
+    padding: 1em 0 1em 0;
+
+}
+
+
+.menuitem:hover{
+    background: rgba(0,0,0,.05);
+
+}
+
+.menuShort:hover{
+    background: rgba(0,0,0,.05);
+}
+
+.menuShort{
+    height: 100%;
+    line-height:100%;
+    width: 7%;
+    background-color: #0b97c4;
+    float: left;
+    text-align: center;
+    vertical-align: bottom;
+    font-size: 14pt;
+    color: #868686;
+    display: block;
+    padding:0 7px;
+    cursor: default;  /* устанавливаем курсор в виде стрелки */
+  }
+
+
+.blog{
+    border:1px solid #000;
+    width: 100%;
+    height: 150px;
+    background-color: #0b97c4;
+    margin-top: 20px;
+}
+
+.contacts{
+    border:1px solid #000;
+    width: 100%;
+    height: 150px;
+    background-color: #c45a58;
+    margin-top: 20px;
+}
+
+.messages{
+    border:1px solid #000;
+    width: 100%;
+    height: 150px;
+    background-color: #14c442;
+    margin-top: 20px;
+}
+
+.fotos{
+    border:1px solid #000;
+    width: 100%;
+    background-color: #182dc4;
+    margin-top: 20px;
+}
+
+.activePage{
+
+    display: block;
+}
+
+.passivePage{
+    display: none;
+
+}
+
