@@ -1,5 +1,4 @@
-
-export default  sortLessons();//отдаём weekData всем желающим
+export  default sortLessons();//отдаём weekData всем желающим
 
 // получаем данные из базы в массив lessons
 function getLessons(){

@@ -8,8 +8,6 @@ export default class Messages extends React.Component{
         super();
     }
 
-
-
     render(){
         return(
             <div className={this.props.className}>
