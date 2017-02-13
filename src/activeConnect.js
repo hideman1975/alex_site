@@ -38,6 +38,9 @@ function sortLessons(lessons=getLessons()){
         }
 
     });
-  
+
+
+
+
     return weekData;
 }

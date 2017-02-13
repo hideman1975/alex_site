@@ -3,7 +3,7 @@
  */
 import React from 'react';
 
-export default class Messages extends React.Component{
+export default class News extends React.Component{
     constructor(props){
         super();
     }
@@ -11,7 +11,7 @@ export default class Messages extends React.Component{
     render(){
         return(
             <div className={this.props.className}>
-                <div className= "messages">
+                <div className= "news">
                     <p>
                     <strong>rendered as bold text</strong> eget <mark>highlight</mark> ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
                     Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.

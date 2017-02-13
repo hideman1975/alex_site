@@ -16,20 +16,22 @@ export default class Week extends React.Component{
 
     eachComment(subj,i){
         return (
-            <div>
-                <h2>{subj[0].day}</h2>
+                            
                 <Shed
                     key={i}
                     subject={subj}
                 />
 
-            </div>
+            
         );
     }
 
+
     render(){
         return(
-                <div className={this.props.className}>{this.state.subject.map(this.eachComment)}</div>
+                <div className={this.props.className + " week"}>
+                    {this.state.subject.map(this.eachComment)}
+                </div>
                );
     }
 }
