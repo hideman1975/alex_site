@@ -15,17 +15,15 @@ export default class Fotos extends React.Component{
 
             <div className={this.props.className}>
                 <div className= "fotos">
-                    <h3>Здесь будут фотки</h3>
-                        <div>
-                        <img src="./img/class01.jpg"></img>
-                        <img src="./img/class02.jpg"></img>
-                        <img src="./img/class03.jpg"></img>
-                        <img src="./img/class04.jpg"></img>
-                        <img src="./img/class10.jpg"></img>
-                        <img src="./img/class06.jpg"></img>
-                        <img src="./img/class07.jpg"></img>
-                        <img src="./img/class08.jpg"></img>
-                        <img src="./img/class09.jpg"></img>
+                    <h3>Фото</h3>
+                    <div>
+                        <div className="fotoCont"><img src="./img/class01.jpg"></img></div>
+                       <div className="fotoCont"><img src="./img/class02.jpg"></img></div>
+                       <div className="fotoCont"><img src="./img/class03.jpg"></img></div>
+                        <div className="fotoCont"><img src="./img/class04.jpg"></img></div>
+                        <div className="fotoCont"><img src="./img/class10.jpg"></img></div>
+                        <div className="fotoCont"><img src="./img/class06.jpg"></img></div>
+                        <div className="fotoCont"><img src="./img/class08.jpg"></img></div>
                 </div>
               </div>
 

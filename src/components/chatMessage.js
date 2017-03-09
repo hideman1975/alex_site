@@ -13,7 +13,8 @@ export default class chatMessage extends React.Component{
         return(
             <div className={this.props.className}>
                 <div className="Message">
-                   <h4>{this.props.mes.author}: {this.props.mes.message}</h4>
+                    {this.props.mes.time}<br/>
+                   <b>{this.props.mes.author}:</b> {this.props.mes.message}
 
                 </div>
             </div>

@@ -47,9 +47,8 @@ class chatContainer extends React.Component{
                
                 <input id="author" hidden="true" type="text" value = {this.props.UserName}/>
                 <input id="room" hidden="true" type="text" value = {this.props.room}/>
-                 Сообщить:  <p><textarea id="message" cols="40" rows="3"></textarea></p>
-                <div id="status"></div>
-                <button onClick={this.getConsole} className="btn btn-primary">Отправить</button>
+                 Сообщить:  <p><textarea id="message" cols="20" rows="2"></textarea></p>
+                  <button onClick={this.getConsole} className="btn btn-primary">Отправить</button>
             </div>
         );
     }
@@ -115,7 +114,7 @@ function postAjax() {
     oXmlHttp.onreadystatechange = function() {
         if (oXmlHttp.readyState == 4 && oXmlHttp.status == 200) {
             var return_data = oXmlHttp.responseText;
-            document.getElementById('status').innerHTML = return_data;
+
         }
     };
     // отправка запроса, sBody - строка данных с формы

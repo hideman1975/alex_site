@@ -18,7 +18,7 @@ class header extends React.Component{
         return(
 
             <div className="header">
-                <h2>5-а класс <small>уголок общения</small></h2>
+                  <div className="logo"><img src="./img/header.png"></img></div>
                 <LoginForm userName={this.props.userName}/>
             </div>
         );

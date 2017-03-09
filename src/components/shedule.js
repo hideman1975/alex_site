@@ -30,11 +30,15 @@ export default class Shedule extends React.Component {
         );
     }
 
+
     render(){
         return(
-
-            <table className="table">
-                <caption>{this.state.subject[0].day}</caption>
+            <div className={"dayDiv " + this.props.active }>
+                <h4>{this.state.subject[0].day}</h4>
+                <div onClick={this.props.switchPrevDay} className="caruselControl">
+                    <img className="arrow" src="icons/arrow-left.png"/>
+                </div>
+             <table className="table dayShedule">
                 <tbody>
                 <tr>
                     <th>&nbsp;</th><th>время</th><th>каб.</th><th>предмет</th><th>задано</th>
@@ -43,6 +47,10 @@ export default class Shedule extends React.Component {
                 {this.state.subject.map(this.eachComment)}
                 </tbody>
             </table>
+                <div onClick={this.props.switchNextDay} className="caruselControl">
+                    <img className="arrow" src="icons/arrow-right.png"/>
+                </div>
+            </div>
 
         );
 

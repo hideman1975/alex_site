@@ -11,7 +11,17 @@ export default class Contacts extends React.Component{
     render(){
         return(
             <div className={this.props.className}>
-            <div className= "contacts"><h3>Здесь будут контакты</h3></div>
+            <div className= "contacts">
+                <h3>Контакты</h3>
+                <p>
+                    автор сайта: <b>Манаенко Андрей</b> <br/>
+                    e-mail: man_ko@mail.ru <br/> <br/>
+                    администратор: <b>Манаенко Алексей</b> <br/>
+                    e-mail: aleksey_manaenko@mail.ru <br/> <br/>
+                </p>
+
+            </div>
+
             </div>
         );
     }

@@ -8,40 +8,33 @@ import Contacts from './components/contacts';
 import Fotos from './components/fotos';
 import News from './components/news';
 import Header from './components/header';
-
+import { connect } from 'react-redux';
+import {addMessageToChat} from './actions/chatActions';
 
 import store from './store';
 
-//Над этим я долго бился________________________
-setInterval(getNewMessage, 5000);
+//Задаёт интервал опроса сервера_______________
+setInterval(getNewMessage, 7000);
 getNewMessage();
 function getNewMessage() {
     var AllMessages = getMessages();
-    
-    store.dispatch({type: 'ADD_MESSAGE', message: AllMessages});
+    store.dispatch(addMessageToChat(AllMessages));
 }
 //______________________________________________
 
 
-export default class App extends React.Component{
+class App extends React.Component{
 
     constructor(props){
         super(props);
-        this.state = {
-            Chatclass: "passivePage",
-            Contactclass: "passivePage",
-            Fotoclass: "passivePage",
-            Messageclass: "passivePage",
-            Lessonsclass: "activePage"
-        };
+
     }
 
     componentDidMount()
     {
-        console.log("App Замаунтился, Ура!");
         var user = checkCookie();
         if(user.login) {
-            postAjax(user);
+        postAjax(user);
         }
     }
 
@@ -50,68 +43,34 @@ export default class App extends React.Component{
         return (
             <div>
                 <Header />
-                <Menu collmeback = {this.menuKey.bind(this)}/>
-                <ChatContainer className={this.state.Chatclass} strQuantity={12}/>
-                <Contacts className={this.state.Contactclass}/>
-                <Fotos className={this.state.Fotoclass}/>
-                <News className={this.state.Messageclass}/>
-                <Week className={this.state.Lessonsclass} subject={sortLessons}/>
+                <Menu menuItem={this.props.menuItem}/>
+                <ChatContainer className={this.props.pages.Chatclass} strQuantity={8}/>
+                <Contacts className={this.props.pages.Contactclass}/>
+                <Fotos className={this.props.pages.Fotoclass}/>
+                <News className={this.props.pages.Messageclass}/>
+                <Week className={this.props.pages.Lessonsclass}
+                      subject={sortLessons}
+                      dayShedule={this.props.dayShedule}
+                />
 
             </div>
         );
     }
 
-    menuKey(mess){
-
-        switch (mess) {
-            case "SHEDULE":
-
-                this.setState({Chatclass: "passivePage"});
-                this.setState({Contactclass: "passivePage"});
-                this.setState({Fotoclass: "passivePage"});
-                this.setState({Messageclass: "passivePage"});
-                this.setState({Lessonsclass: "activePage"});
-                    break;
-            case "CHAT":
-
-                this.setState({Chatclass: "activePage"});
-                this.setState({Contactclass: "passivePage"});
-                this.setState({Fotoclass: "passivePage"});
-                this.setState({Messageclass: "passivePage"});
-                this.setState({Lessonsclass: "passivePage"});
-                break;
-
-            case "FOTOS":
-
-                this.setState({Chatclass: "passivePage"});
-                this.setState({Contactclass: "passivePage"});
-                this.setState({Fotoclass: "activePage"});
-                this.setState({Messageclass: "passivePage"});
-                this.setState({Lessonsclass: "passivePage"});
-                break;
-            case "CONTACTS":
-
-                this.setState({Chatclass: "passivePage"});
-                this.setState({Contactclass: "activePage"});
-                this.setState({Fotoclass: "passivePage"});
-                this.setState({Messageclass: "passivePage"});
-                this.setState({Lessonsclass: "passivePage"});
-                break;
-            case "NEWS":
-
-                this.setState({Chatclass: "passivePage"});
-                this.setState({Contactclass: "passivePage"});
-                this.setState({Fotoclass: "passivePage"});
-                this.setState({Messageclass: "activePage"});
-                this.setState({Lessonsclass: "passivePage"});
-                break;
-            default:
-                console.log("Левое нажатие");
-                break;
-        }
-
-    }
 }
+
+const mapStateToProps = function(state) {
+    return {
+
+        pages: state.pages,
+        dayShedule: state.dayShedule,
+        testProps: state.testProps,
+        menuItem: state.menuItem
+    };
+};
+
+export default connect(mapStateToProps)(App);
+
 
 function checkCookie() {
     var user = {

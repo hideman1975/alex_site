@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import store from '../store';
-
+import {logInUserToSite, logOutUser} from '../actions/loginActions';
 export default class loginForm extends React.Component{
     constructor(props){
         super();
@@ -17,7 +17,8 @@ export default class loginForm extends React.Component{
 
     logOut(){
 
-        store.dispatch({type: 'LOGOUT_USER'});
+        
+        store.dispatch(logOutUser());
         setCookie("ComeInUserLogin", null, 30);
         setCookie("ComeInUserHash", null, 30);
         setCookie("ComeInUserRole", null, 30);
@@ -100,7 +101,8 @@ function postAjax(ComeInUser) {
             ComeInUser = JSON.parse(return_data);
             console.log("postAJAX says",ComeInUser);
             if (ComeInUser) {
-                store.dispatch({type: 'LOGIN_USER', user: ComeInUser });
+                //store.dispatch({type: 'LOGIN_USER', user: ComeInUser });
+                store.dispatch(logInUserToSite(ComeInUser));
                 setCookie("ComeInUserLogin", ComeInUser.login, 30);
                 setCookie("ComeInUserHash", ComeInUser.hash, 30);
                 setCookie("ComeInUserRole", ComeInUser.role, 30);

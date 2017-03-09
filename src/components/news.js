@@ -12,10 +12,15 @@ export default class News extends React.Component{
         return(
             <div className={this.props.className}>
                 <div className= "news">
+                    <h3>Объявления</h3>
                     <p>
-                    <strong>rendered as bold text</strong> eget <mark>highlight</mark> ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
-                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.
-                    Maecenas sed diam <s>This line of text is meant to be treated as no longer accurate.</s> sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                    Продаётся кошка, окрас рыжий.
+                    </p>
+                    <p>
+                        Продаётся велосипед, цвет синий.
+                    </p>
+                    <p>
+                        Продаются коньки, размер 37.
                     </p>
                 </div>
             </div>

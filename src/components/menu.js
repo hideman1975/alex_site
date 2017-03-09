@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import MenuButton from './menuButton';
-import MenuShort from './menuShort';
+
 
 export default class Menu extends React.Component {
 
@@ -11,12 +11,16 @@ export default class Menu extends React.Component {
     render() {
        return (
        <nav className = "mainmenu">
-           <MenuShort clickApp= {this.props.collmeback} label="H" actionType="SHORT_LABEL"/>
-           <MenuButton clickApp= {this.props.collmeback} label="Рассписание" actionType="SHEDULE"/>
-           <MenuButton clickApp= {this.props.collmeback} label="Блог" actionType="CHAT"/>
-           <MenuButton clickApp= {this.props.collmeback} label="Фото" actionType="FOTOS"/>
-           <MenuButton clickApp= {this.props.collmeback} label="Объявления" actionType="NEWS"/>
-           <MenuButton clickApp= {this.props.collmeback} label="Контакты" actionType="CONTACTS"/>
+           <MenuButton className={this.props.menuItem[0]} cont="Расписание"
+                       label="calendar" actionType="SHEDULE"/>
+           <MenuButton  className={this.props.menuItem[1]} cont="Чат"
+                        label="comment_add" actionType="CHAT"/>
+           <MenuButton  className={this.props.menuItem[2]} cont="Фотографии"
+                        label="images" actionType="FOTOS"/>
+           <MenuButton  className={this.props.menuItem[3]} cont="Объявления"
+                        label="page_writing" actionType="NEWS"/>
+           <MenuButton  className={this.props.menuItem[4]} cont="Контакты"
+                        label="email" actionType="CONTACTS"/>
        </nav>
        );
    }
